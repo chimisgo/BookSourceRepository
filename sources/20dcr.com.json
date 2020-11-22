@@ -1,0 +1,25 @@
+{
+    "name": "稻草人书屋",
+    "url": "20dcr.com",
+    "version": 100,
+    "search": {
+        "url": "https://www.bing.com/search?q=intitle%3A%22${key}%22+%22最新章节%22+site%3A20dcr.com",
+        "list": "h2",
+        "name": "a@match->.+(?=\\()",
+        "detail": "a"
+    },
+    "detail": {
+    },
+    "catalog": {
+        "list": "#all-chapter > div > div > div > div > a",
+        "name": "a",
+        "chapter": "a"
+    },
+    "chapter": {
+        "content": "#cont-text",
+        "filter": [
+            "#cont-text > style@match->(?<=.).+(?=\\{)"
+        ],
+        "page": "a:matches(下一页)"
+    }
+}
